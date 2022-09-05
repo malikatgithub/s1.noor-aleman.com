@@ -1,0 +1,11 @@
+{{-- CODE FOR HANDLE THE EXCEPTION ERROR IF FEES TYPES DELETED --}}
+                                         @php
+                                            try {
+                                            echo "    
+                                                $fees_name";
+                                            } 
+                                            catch (\Exception $e) {echo "<spna class='text-danger font-weight-bold'>لقد تم مسح نوع هذا القسط الرجاء مراجعة سله المهملات  !!</span>";}
+                                         @endphp
+
+                                        {{-- # CODE FOR HANDLE THE EXCEPTION ERROR IF FEES TYPES DELETED --}}
+                                        

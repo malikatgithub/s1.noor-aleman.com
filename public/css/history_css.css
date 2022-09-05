@@ -1,0 +1,61 @@
+.sidenav {
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #1b486d;
+    /* background: linear-gradient(40deg, #678fab, #3570c7)!important; */
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;
+    overflow-x: hidden;
+    padding-top: 0px;
+}
+
+.sidenav>h3 {
+    color: white;
+}
+
+.sidenav>hr {
+    border: 1px solid #f3f3f3;
+}
+
+.sidenav a {
+    /* form-control-lg padding: 6form-control-lgpx;
+    text-decorform-control-lg font-size: form-control-lg color: #818181; */
+    display: block;
+    color: white;
+}
+
+.sidenav a:hover {
+    /* form-control-lg padding: 6form-control-lgpx;
+    text-decorform-control-lg font-size: form-control-lg color: #818181; */
+    text-decoration: none;
+}
+
+.sidenav-header {
+    margin-top: -7px;
+}
+
+.nav-content {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.icon-padding {
+    margin-right: 20px;
+}
+
+.main {
+    margin-right: 220px;
+    /* Same as the width of the sidenav */
+    /*font-size: 28px;
+    /* Increased text to enable scrolling */
+    /* padding: 0px 10px; */
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 0px;
+    }
+}

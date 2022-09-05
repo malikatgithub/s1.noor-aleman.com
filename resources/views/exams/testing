@@ -1,0 +1,62 @@
+
+                                            @if ($student->id == $student_result->std_id and $exam->id == $exam_result->exam_id)
+                                              
+                                            @else
+                                                <form action="{{route('grades.store')}}" method="POST" enctype="multipart/form-data">
+                                                                                    {{@csrf_field()}}
+                                                                                    <table class="table table-striped table-bordered text-right" >
+                                                                                        
+                                                                                            <tbody class="text-right">
+                                                                                                        
+                                                                                                
+                                                                                            {{-- Import hidden information for database feed table --}}
+                                                                                                <input type="hidden" class="form-control p-0 m-0 border-0 " style="font-size:10px; background:inherit" id="validationDefault01" placeholder="" readonly required name="academic_year_id" value="{{$exam->academic_year_id}}">
+                                                                                                <input type="hidden" class="form-control p-0 m-0 border-0 " style="font-size:10px; background:inherit" id="validationDefault01" placeholder="" readonly required name="class_id" value="{{$exam->class_id}}">
+                                                                                                <input type="hidden" class="form-control p-0 m-0 border-0 " style="font-size:10px; background:inherit" id="validationDefault01" placeholder="" readonly required name="exam_id" value="{{$exam->id}}">
+                                                                                                <input type="hidden" class="form-control p-0 m-0 border-0 " style="font-size:10px; background:inherit" id="validationDefault01" placeholder="" readonly required name="total_grade" value="{{$exam->total_grade}}">
+                                                                                            {{-- Ends Import hidden information for database feed table --}}
+                                                                                                        <tr>   
+                                                                                            <td style="width:15%">
+                                                                                                {{$student->name}}
+                                                                                            </td>
+                                                                                            <span style="display:none">@php $x=0 @endphp </span>
+
+
+                                                                                            {{-- CREATE THE SUBJECT INPUT FEILD --}}
+
+                                                                                            @foreach ($subjects_name as $subject_name)
+
+                                                                                                {{-- {{$x++}} --}}
+                                                                                                <span style="display:none">@php $x++ @endphp </span>
+                                                                                                <input type="hidden" class="form-control p-0 m-0 border-0 " style="font-size:10px; background:inherit" id="validationDefault01" placeholder="" readonly required name="student_id" value="{{$student->id}}">  
+                                                                                                <td> 
+                                                                                                    <label for="validationDefault01" class="text-muted" style="font-size:10px;">{{$subject_name->name}}</label> 
+                                                                                                <input type="hidden" class="form-control p-0 m-0 border-0 " style="font-size:10px; background:inherit" id="validationDefault01" placeholder=""  required  name="subject_id[]" value="{{$subject_name->id}}">
+                                                                                                <input type="number" class="form-control w-50" id="validationDefault01" placeholder=""  required name="{{'grade'.$x}}" value="">
+                                                                                                </td>
+                                                                                        
+                                                                                            @endforeach  
+
+                                                                                            {{-- # CREATE THE SUBJECT INPUT FEILD --}}
+                                                                                        
+                                                                                        
+                                                                                
+                                                                                            <td>
+                                                                                                <center>
+                                                                                                    <label for="validationDefault01" class="text-muted font-weight-bold" style="font-size:12px;">حفظ</label> 
+                                                                                                    <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-save fa-2x"></i></button>   
+                                                                                                </center>
+                                                                                            </td>
+                                                                                    
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                    
+                                                                                        </table>
+                                                                                    </form> 
+                                            @endif
+
+                                            @endif
+
+
+                                            
+                                          
